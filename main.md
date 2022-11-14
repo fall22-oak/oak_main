@@ -105,7 +105,7 @@ December 9: Final Project Due
 
     Features
 
-* `app_id` - request id. Requests are enumerated wrt time, starting with the earliest date. `app` may stand for application for a financial product or applicant, so we may treat `app_id` as `client_id`. We need to check if `app_id` has a unique `product` (see train_target.csv and test_target_contest.csv).
+* `app_id` - request id. Requests are enumerated wrt time, starting with the earliest date. `app` may stand for application for a financial product or applicant, so we may treat `app_id` as `client_id`. In `train_target.csv`, `app_id` values are unique.
 * `amnt` - normalized transaction sum. 0.0 - missed data (?)
 * `currency` - currency id
 * `operation_type` - card operation type id
