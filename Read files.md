@@ -40,6 +40,27 @@ df.query('app_id == 0')
 df.query('app_id == 1')
 ```
 
+No NaN in the data
+
+```python
+df.isna().any().any()
+```
+
+`amnt` = 0.0 may be an indicator of missing data (it is not clear from the feature description)
+
+```python
+df.amnt.min()
+```
+
+```python
+zero_amnt_count = df.groupby('app_id')['amnt'].apply(lambda x: (x == 0).sum())
+```
+
+```python
+g = sns.histplot(zero_amnt_count)
+g.set_yscale('log')
+```
+
 Transaction history is taken from the year before the credit is issued
 
 ```python
@@ -107,6 +128,12 @@ sns.histplot(train_target, x='product', hue='flag', discrete=True)
 ```python
 g = sns.histplot(train_target, x='product', hue='flag', discrete=True)
 g.set_yscale('log')
+```
+
+percentage of default cases for each product
+
+```python
+train_target.groupby('product')['flag'].mean() * 100
 ```
 
 ```python
