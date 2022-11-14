@@ -108,6 +108,8 @@ December 9: Final Project Due
 * `app_id` - request id. Requests are enumerated wrt time, starting with the earliest date. `app` may stand for application for a financial product or applicant, so we may treat `app_id` as `client_id`. In `train_target.csv`, `app_id` values are unique.
 * `amnt` - normalized transaction sum. 0.0 - missed data (?)
 * `currency` - currency id
+* `operation_kind` - transaction type id
+* `card_type` - card type unique id
 * `operation_type` - card operation type id
 * `operation_type_group` - id of a group of a card operation type (e.g., debit card or credit card)
 * `ecommerce_flag` - ecommerce flag
