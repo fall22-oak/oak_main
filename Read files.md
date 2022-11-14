@@ -40,24 +40,42 @@ df.query('app_id == 0')
 df.query('app_id == 1')
 ```
 
+Transaction history is taken from the year before the credit is issued
+
 ```python
-history_len = df.groupby('app_id').size()
+days_before_max = df.groupby('app_id')['days_before'].max()
 ```
 
 ```python
-history_len.max() / 365
+days_before_max.min(), days_before_max.max()
 ```
 
 ```python
-history_len.min()
+sns.histplot(days_before_max)
 ```
 
 ```python
-sns.histplot(history_len)
+g = sns.histplot(days_before_max)
+g.set_yscale('log')
+```
+
+How many transactions is made before the issuance of credit?
+
+```python
+transaction_num = df.groupby('app_id').size()
 ```
 
 ```python
-sns.histplot(history_len[history_len < 1000])
+transaction_num.min(), transaction_num.max()
+```
+
+```python
+sns.histplot(transaction_num)
+```
+
+```python
+g = sns.histplot(transaction_num)
+g.set_yscale('log')
 ```
 
 ```python
@@ -68,13 +86,19 @@ train_target = pd.read_csv('../train_target.csv')
 train_target
 ```
 
+Each application is unique
+
 ```python
 train_target.app_id.duplicated().any()
 ```
 
+Let's analyze groups of financial products
+
 ```python
 sns.histplot(train_target['product'], discrete=True)
 ```
+
+Most of applications are not defaulted, the dataset is unbalanced
 
 ```python
 sns.histplot(train_target, x='product', hue='flag', discrete=True)
@@ -83,4 +107,8 @@ sns.histplot(train_target, x='product', hue='flag', discrete=True)
 ```python
 g = sns.histplot(train_target, x='product', hue='flag', discrete=True)
 g.set_yscale('log')
+```
+
+```python
+
 ```
