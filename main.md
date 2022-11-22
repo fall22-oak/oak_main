@@ -21,7 +21,9 @@ jupyter:
 
 [Source link](https://ods.ai/competitions/dl-fintech-card-transactions) Get dataset and description there. Download each file separately. Do not use `Download all materials` button, the resulting zip file is corrupted.
 
-[Link to submit test prediction](https://boosters.pro/championship/alfabattle2_sand/overview) I could not join the competition there at this moment, there's an issue with phone verification. But this is the only way to score test prediction. Maybe I can ask the organizer to provide us with the test ground truth...
+[Link to submit test predictions](https://ods.ai/competitions/dl-fintech-card-transactions/submissions)
+
+[Another platform to submit test prediction but it does not work](https://boosters.pro/championship/alfabattle2_sand/overview)
 
 [Best publicly shared solution](https://github.com/aizakharov94/AlfaBattle_task2)
 
