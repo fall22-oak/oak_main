@@ -86,16 +86,16 @@ November 20:
 * List of successes and pitfalls (so we can help you address them!)
 
 December 9: Final Project Due
-* Presentation video and accompanying Google Slides 
+* Presentation video and accompanying Google Slides
 * Presentations will be 5-min pre-recorded video based on Google Slides
 * Slides should cover data gathering, exploratory data analysis, modeling approach, finalized results (visualizations and/or metrics), and implications / recommendations for stakeholders
 * Annotated GitHub
 * Nice markdown file
-* For each notebook, include text so people can understand what you are doing and why 
+* For each notebook, include text so people can understand what you are doing and why
 * Please note that the GitHub repo should be public
 * Executive Summary (1 page maximum)
 * More than your actual code and modeling, companies want to see how your results will help them. This is the type of information they are looking for in job interviews
-* Questions to address: How do your results impact the KPIs of the business? What recommendations do you have for the stakeholders? 
+* Questions to address: How do your results impact the KPIs of the business? What recommendations do you have for the stakeholders?
 
 
 <!-- #region -->
@@ -105,7 +105,7 @@ December 9: Final Project Due
 
     Features
 
-* `app_id` - request id. Requests are enumerated wrt time, starting with the earliest date. `app` may stand for application for a financial product or applicant, so we may treat `app_id` as `client_id`. In `train_target.csv`, `app_id` values are unique.
+* `app_id` - request id. Requests are enumerated wrt time, starting with the earliest date. From my guess, `app_id` may stand for a financial product application id or an applicant id, so we may treat `app_id` as a client identifier. In `train_target.csv`, `app_id` values are unique. All transactions related to `app_id` are stored in a single parquet partition so we can process each parquet file separately.
 * `amnt` - normalized transaction sum. 0.0 - missing data (?)
 * `currency` - currency id
 * `operation_kind` - transaction type id
