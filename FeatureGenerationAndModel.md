@@ -35,7 +35,7 @@ TEST_TARGET_PATH = '../test_target_contest.csv'
 from features import extract_basic_aggregations
 
 def prepare_transactions_dataset(path_to_dataset: str,
-                                 num_parts_to_preprocess_at_once: int = 1,
+                                 num_parts_to_preprocess_at_once: int=1,
                                  num_parts_total: int=50, 
                                  save_to_path=None,
                                  verbose: bool=False):
@@ -215,7 +215,7 @@ from sklearn.model_selection import train_test_split
 ```
 
 ```python
-train_data, val_data = train_test_split(data.copy(), test_size=0.1, random_state=42)
+train_data, val_data = train_test_split(data.copy(), test_size=0.1, random_state=42, stratify=data['flag'].values)
 ```
 
 ```python
@@ -334,8 +334,8 @@ gs_xgb3.best_score_
 
 ```python
 xgb_clf = XGBClassifier(early_stopping_rounds=10,
-                        learning_rate = 0.1,
-                        max_depth = 9,
+                        learning_rate=0.1,
+                        max_depth=9,
                         **xgb_method_param,
                         n_estimators=300,
                         random_seed=42,
@@ -351,12 +351,16 @@ from sklearn.model_selection import cross_val_score
 ```
 
 ```python
-xgb_final = XGBClassifier(learning_rate = 0.1,
-                        max_depth = 9,
-                        **xgb_method_param,
-                        n_estimators=211,
-                        random_seed=42)
-xgb_final_cv_score = cross_val_score(estimator=xgb_final, X=train_data[features], y=train_data['flag'], scoring='roc_auc', cv=n_splits)
+xgb_final = XGBClassifier(learning_rate=0.1,
+                          max_depth=9,
+                          **xgb_method_param,
+                          n_estimators=146,
+                          random_seed=42)
+xgb_final_cv_score = cross_val_score(estimator=xgb_final,
+                                     X=train_data[features],
+                                     y=train_data['flag'],
+                                     scoring='roc_auc',
+                                     cv=n_splits)
 ```
 
 ```python
@@ -367,13 +371,16 @@ xgb_final_cv_score
 xgb_final_cv_score.mean()
 ```
 
-Well, maybe when we do cross-validation, we have less training data and the increased n_estimators does not help?
+[146]	validation_0-auc:0.77840
+
+So we are able to get close results for validation at val_data and cross-validation at train_data, good!
+
+
+Now let's run the final model on the test dataset
 
 ```python
 xgb_final.fit(X=data[features], y=data['flag'])
 ```
-
-Now let's run the final model on the test dataset
 
 ```python
 default_proba = xgb_final.predict_proba(X=test_data[features])[:,1]
