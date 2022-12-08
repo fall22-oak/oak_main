@@ -27,6 +27,7 @@ from joblib import dump
 ```
 
 ```python
+# if the plots look bad, run it again
 plt.rcParams['figure.dpi'] = 300
 plt.rcParams['savefig.dpi'] = 300
 ```
