@@ -1,7 +1,8 @@
 ### Credit card usage and default risk
 
-### Team members
+### Team members (Oak Team)
 Alexander Timofeev
+
 Martin Molina
 
 ### Motivation
@@ -15,8 +16,6 @@ We were able to increase the proportion of applicants correctly predicted to def
 
 Although our original objective was to rely solely on anonymous data, our model could be improved if third party information and personal data were used such as credit scores and demographic information.
 
-Slides: https://docs.google.com/presentation/d/1LXup8CaDlZFC_feaj2BzeHCIj5Nevm75pVJNJSUXTYo/edit?skip_itp2_check=true#slide=id.p
-Executive Summary: https://docs.google.com/document/d/1OH3KMq_FwH_pfcZN56qx6OIA_jXwMwQan2YcQj9x-A0/edit
 
 ### Get dependency from .ipynb
 ```
@@ -24,3 +23,7 @@ jupyter nbconvert --output-dir="./reqs" --to script *.ipynb
 cd reqs
 pipreqs --print
 ```
+
+
+Slides: https://docs.google.com/presentation/d/1LXup8CaDlZFC_feaj2BzeHCIj5Nevm75pVJNJSUXTYo/edit?skip_itp2_check=true#slide=id.p
+Executive Summary: https://docs.google.com/document/d/1OH3KMq_FwH_pfcZN56qx6OIA_jXwMwQan2YcQj9x-A0/edit
