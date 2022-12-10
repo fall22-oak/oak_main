@@ -18,3 +18,5 @@ We were able to increase the proportion of applicants correctly predicted to def
 
 Although our original objective was to rely solely on the anonymous data provided by the bank, our model could be improved if third party information and personal data were used such as credit scores and demographic information. However, as our model require no third party information about clients it could be used as a quick early screening tool to reduce application processing times and provide an easier experience for applicants.
 
+## Requirements
+The project requires a number of additional packages listed in `requirements.txt`. One option to install them is to run `pip install -r /path/to/requirements.txt`
