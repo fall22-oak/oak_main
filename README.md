@@ -14,6 +14,7 @@ Credit risk assessment of individuals is traditionally determined using data suc
 We used real data from Alfa Bank, released in the context of [this](https://ods.ai/competitions/dl-fintech-card-transactions) competition, that contains 1.5 million records of approved credit applications for different products offered by the bank, and information on whether applicants eventually defaulted on them.
 
 ## Results and future directions
-We were able to increase the proportion of applicants correctly predicted to default on a credit application, as measured by the ROC AUC metric.
+We were able to increase the proportion of applicants correctly predicted to default on a credit application in comparison with our baseline model, as measured by the ROC AUC metric.
 
-Although our original objective was to rely solely on anonymous data, our model could be improved if third party information and personal data were used such as credit scores and demographic information.
+Although our original objective was to rely solely on the anonymous data provided by the bank, our model could be improved if third party information and personal data were used such as credit scores and demographic information. However, as our model require no third party information about clients it could be used as a quick early screening tool to reduce application processing times and provide an easier experience for applicants.
+
