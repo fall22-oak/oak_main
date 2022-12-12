@@ -52,12 +52,10 @@ Related [video](https://www.youtube.com/watch?v=yzV5ZQB850s) and [article](https
 ### Stakeholders
 Banks, other commercial institutions, government
 ### Company KPIs we pursuit to improve
-Banks: TODO
-
-Other commercial institutions: TODO
-
-Government: TODO
-
+* Minimize losses due to borrowers inability to pay loans back
+* Maximize revenue due to giving green light to the larger number of clients with hight credit score
+* Reduce application processing times
+* Simplify application process for clients
 ### Timeline
 
 October 28:
