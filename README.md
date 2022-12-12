@@ -7,6 +7,13 @@ Alexander Timofeev
 
 Martin Molina
 
+## Files
+* `main.md`: project description, start from here
+* `FeatureGenerationAndModel.md`: notebook with models and more EDA
+* `Read files.md`: example of how to read files and some basic EDA
+* `features.py`: feature extraction functions
+* `utils.py`: additional functions such as reading parquet files
+
 ## Motivation
 Credit risk assessment of individuals is traditionally determined using data such as age, income, education level, and FICO or Equifax credit scores. The increasing popularity of e-commerce and the large amount of bank card transaction data that can be collected and associated with clients these days suggest that a machine learning approach that incorporates this data can be useful for credit risk determination. Using data about bank card transactions and default history of other clients, we built a model to assess the credit risk of an applicant that requires only his bank card transaction history. 
 
@@ -20,3 +27,6 @@ Although our original objective was to rely solely on the anonymous data provide
 
 ## Requirements
 The project requires a number of additional packages listed in `requirements.txt`. One option to install them is to run `pip install -r /path/to/requirements.txt`
+
+## Additional info
+This project uses Jupytext to do git things with notebooks. Please do not upload/commit .ipynb files without great need. You can learn more about Jupytext in [this](https://www.youtube.com/watch?v=J5yW-NEJp5Q&t=3s) video.
